@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>game for sang</title>
+    <style>
+        h1{
+            margin: 0px;
+            padding: 0px;
+        }
+        .box{
+            border: 1px solid gray;
+
+        }
+        .picture{
+            border: 1px solid gray;
+            height: 220px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .picture img{
+            height: 160px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: auto;
+        }
+        .result{
+            border: 1px solid gray;
+            height: 80px;
+            display: fles;
+            align-items: center;
+            text-align: center;
+        }
+        .res{
+            font-size: 60px;
+        }
+        .images{
+            height: 180px;
+            border: 1px solid gray;
+            display: flex;
+            text-align: center;
+            margin: auto;
+            justify-content: space-around; 
+            align-items: center;
+        }
+        .images img{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">in the name of Allah</h1>
+    <div class="box">
+        <div class="picture" id="picture">
+         <div>
+            <h1>user</h1>
+            <img id="userSrc" src="" alt="">
+         </div>
+         <div>
+            <h1>computer</h1>
+            <img id="comSrc" src="" alt="">
+         </div>
+        </div>
+        <div class="result" id="result">result is: <span class="result" id="res"></span>
+        </div>
+        <div class="images" id="images">
+            <button class="f">
+                <img id="img_src1" src="images/paper.png" alt="">
+            </button>
+            <button>
+                <img id="img_src2" src="images/rock.png" alt="">
+            </button>
+            <button>
+                <img id="img_src3" src="images/scissors.png" alt="">
+            </button>
+        </div>
+
+    </div>
+</body>
+</html>
+<script src="jquery-3.7.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+
+      var src1=""
+      var rand=""
+      var ch1=document.getElementById("img_src1");
+      ch1.addEventListener("click", function(){
+        ch1.style.backgroundColor="red";
+        ch2.style.backgroundColor="";
+        ch3.style.backgroundColor="";
+       src1=ch1.src;
+        document.getElementById("userSrc").src=src1;
+        
+        rand =Math.floor(Math.random()*3 +1)
+       
+       var first=""
+       if(rand==1){
+      first= document.getElementById("img_src1").src
+       document.getElementById("comSrc").src=first;
+       document.getElementById("result").innerText="your game is equal";
+       }
+       var second=""
+       if(rand==2){
+       second= document.getElementById("img_src2").src
+       document.getElementById("comSrc").src=second;
+       document.getElementById("result").innerText="the user is win";
+       }
+
+       var third=""
+       if(rand==3){
+       third= document.getElementById("img_src3").src
+       document.getElementById("comSrc").src=third;
+       document.getElementById("result").innerText="the user is lose";
+       }
+      })
+
+
+      var src2=""
+      var ch2=document.getElementById("img_src2");
+      ch2.addEventListener("click", function(){
+        ch2.style.backgroundColor="red";
+        ch1.style.backgroundColor="";
+        ch3.style.backgroundColor="";
+       src2=ch2.src;
+        document.getElementById("userSrc").src=src2;
+        rand =Math.floor(Math.random()*3 +1)
+       console.log(rand)
+       var first=""
+       if(rand==1){
+      first= document.getElementById("img_src1").src
+       document.getElementById("comSrc").src=first;
+       document.getElementById("result").innerText="the user is lose";
+       }
+       var second=""
+       if(rand==2){
+       second= document.getElementById("img_src2").src
+       document.getElementById("comSrc").src=second;
+       document.getElementById("result").innerText="the user is lose";
+       }
+
+       var third=""
+       if(rand==3){
+       third= document.getElementById("img_src3").src
+       document.getElementById("comSrc").src=third;
+       document.getElementById("result").innerText="you lose";
+       }
+
+       var first=""
+       if(rand==1){
+      first= document.getElementById("img_src1").src
+       document.getElementById("comSrc").src=first;
+       document.getElementById("result").innerText="the user is lose";
+       }
+       var second=""
+       if(rand==2){
+       second= document.getElementById("img_src2").src
+       document.getElementById("comSrc").src=second;
+       document.getElementById("result").innerText="your game is equal";
+       }
+
+       var third=""
+       if(rand==3){
+       third= document.getElementById("img_src3").src
+       document.getElementById("comSrc").src=third;
+       document.getElementById("result").innerText="you win";
+       }
+      })
+
+      var src3=""
+      var ch3=document.getElementById("img_src3");
+      ch3.addEventListener("click", function(){
+        ch3.style.backgroundColor="red";
+        ch1.style.backgroundColor="";
+        ch2.style.backgroundColor="";
+        src3=ch3.src;
+        document.getElementById("userSrc").src=src3;
+        rand =Math.floor(Math.random()*3 +1)
+        console.log(rand)
+
+        var first=""
+       if(rand==1){
+      first= document.getElementById("img_src1").src
+       document.getElementById("comSrc").src=first;
+       document.getElementById("result").innerText="you win";
+       }
+       var second=""
+       if(rand==2){
+       second= document.getElementById("img_src2").src
+       document.getElementById("comSrc").src=second;
+       document.getElementById("result").innerText="you lose it";
+       }
+
+       var third=""
+       if(rand==3){
+       third= document.getElementById("img_src3").src
+       document.getElementById("comSrc").src=third;
+       document.getElementById("result").innerText="the game is equal you should try again";
+       }})})
+       </script>
